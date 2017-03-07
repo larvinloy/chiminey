@@ -1,8 +1,7 @@
 Chiminey
 ========
 
-.. image:: https://travis-ci.org/chiminey/chiminey.svg?branch=master
-   :target: https://travis-ci.org/chiminey/chiminey
+This branch was developed for (https://github.com/larvinloy/docker-chiminey/tree/3drac_chiminey2). Please fo through the README and REPORT.pdf in this repo.
 
 Connecting Scientists to HPC, Cloud and Big Data.
 
