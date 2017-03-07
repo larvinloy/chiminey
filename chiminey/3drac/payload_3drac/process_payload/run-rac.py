@@ -2,6 +2,17 @@
 import os, sys, getopt , ast
 import json
 
+def get_channel(valuesfile,outputdir):
+   channel  =''
+
+   with open(valuesfile) as json_data:
+      values_content = json.load(json_data)
+      
+      channel = str( values_content.get('channel') )
+      #print dfname, coord 
+      json_data.close()
+   return channel
+
 def get_cube(valuesfile,outputdir):
    row_count = 0
    column_count = 0
@@ -55,6 +66,11 @@ def main(argv):
          #print javapath
    if outputdir and javapath and valuesfile:
       blockfile_withlocation = get_cube(valuesfile,outputdir)
+      channelname = get_channel(valuesfile,outputdir)
+      precom = javapath + 'java -cp transform.jar chiminey.connector3drac.transformdata.Transform ' + blockfile_withlocation + ' ' + channelname
+      os.system(precom)
+      imgcom = javapath + 'java -cp createImage.jar chiminey.connector3drac.transformdata.CreateImage ' + blockfile_withlocation + ' ' + channelname
+      os.system(imgcom)
       command_string = javapath + 'java -cp roughness-analysis-cli.jar rougness.analysis.RoughnessAnalysisCLI ' + blockfile_withlocation + ' > ' + outputdir + '/' + r'result'
       #print (command_string)
       os.system(command_string)
