@@ -1,7 +1,7 @@
 Chiminey
 ========
 
-This branch was developed for (https://github.com/larvinloy/docker-chiminey/tree/3drac_chiminey2). Please fo through the README and REPORT.pdf in this repo.
+This branch was developed for (https://github.com/larvinloy/docker-chiminey/tree/3drac_chiminey2). Please go through the README and REPORT.pdf in this repo.
 
 Connecting Scientists to HPC, Cloud and Big Data.
 
